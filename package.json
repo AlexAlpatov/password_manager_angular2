@@ -5,7 +5,7 @@
   "scripts": {
     "start": "concurrently \"npm run tsc:w\" \"npm run lite\" ",
     "docker-build": "docker build -t ng2-quickstart .",
-    "docker": "npm run docker-build && docker run -it --rm -p 3000:3000 -p 3001:3001 ng2-quickstart",
+    "docker": "npm run docker-build && docker run -it --rm -p 8000:8000 -p 8001:8001 ng2-quickstart",
     "pree2e": "npm run webdriver:update",
     "e2e": "tsc && concurrently \"http-server -s\" \"protractor protractor.config.js\" --kill-others --success first",
     "lint": "tslint ./app/**/*.ts -t verbose",
@@ -41,10 +41,6 @@
     "reflect-metadata": "^0.1.8",
     "rxjs": "5.0.0-beta.12",
     "zone.js": "^0.6.26"
-  },
-  "engines": {
-    "node": "4.6.1",
-    "npm": "3.10.7"
   },
   "devDependencies": {
     "concurrently": "^3.1.0",
