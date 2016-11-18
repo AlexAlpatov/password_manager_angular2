@@ -1,0 +1,42 @@
+body {
+  background-color: #c0c0c0; }
+
+.container {
+  max-width: 1200px; }
+
+.form-signin {
+  margin: 150px auto 0;
+  max-width: 350px; }
+
+.contact_form {
+  margin: 150px auto;
+  max-width: 350px; }
+  .contact_form li {
+    margin-bottom: 5px; }
+
+.error {
+  color: #f42156;
+  text-align: center;
+  font-size: 14px; }
+
+.userPage h3{
+  color: #ffff00;
+}
+
+.table td {
+  position: relative; }
+
+.buttEdit {
+  position: absolute;
+  display: block;
+  right: 10px;
+  top: 8px;
+  background: url("../img/edit.png");
+  width: 32px;
+  height: 32px;
+  cursor: pointer; }
+  .buttEdit:hover {
+    background-position: 0 -33px; }
+
+.form-control[disabled], fieldset[disabled] .form-control {
+  cursor: default; }

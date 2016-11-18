@@ -1,0 +1,26 @@
+<div class="container createAccount" >
+  <a href="javascript:;" (click)="goBack()">back</a>
+
+  <div class="contact_form">
+    <ul>
+      <li>
+        <h2>Create an Account</h2>
+      </li>
+      <li>
+        <input type="text" id="inputRegName" class="form-control" autocomplete="off" placeholder="Name" [(ngModel)]="newUserAccount.username" autocomplete="off" autofocus>
+      </li>
+      <li>
+        <input type="text" id="inputRegLastName" class="form-control" autocomplete="off" placeholder="Last name" [(ngModel)]="newUserAccount.lastname" autocomplete="off">
+      </li>
+      <li>
+        <input type="password" id="inputRegPass" class="form-control" autocomplete="off" placeholder="Password" [(ngModel)]="newUserAccount.password" autocomplete="off"/>
+      </li>
+
+      <input id="buttReg" class="btn btn-lg btn-primary btn-block" type="button" value="Create an Account" (click)="registration()">
+
+    </ul>
+    <p *ngIf="markerErrorNumber === 1"  class="error">name is empoyed</p>
+    <p *ngIf="markerErrorNumber === 2"  class="error">Fill in all fields</p>
+
+  </div>
+</div>

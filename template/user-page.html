@@ -1,0 +1,53 @@
+<div class="container userPage" >
+
+  <div [hidden]="currentUser"  class='container'>
+    <a href="javascript:;" (click)="logOut()" >Back</a>
+
+    <h1>Please sign in</h1>
+  </div>
+
+
+  <div [hidden]="!currentUser">
+
+  <a href="javascript:;" (click)="logOut()" id="logOut">log out</a>
+
+  <h1>Password manager</h1>
+  <h3>Hello {{currentUser}}</h3>
+
+  <table class="table">
+    <thead>
+    <tr>
+      <th><h4>Website</h4></th>
+      <th><h4>Login</h4></th>
+      <th><h4>Password</h4></th>
+      <th></th>
+    </tr>
+    <tr>
+      <td><input type="text" class="form-control" id="websiteInput" [(ngModel)]="userContentItem.website"></td>
+      <td><input type="text" class="form-control" id="loginInput" [(ngModel)]="userContentItem.login"></td>
+      <td><input type="text" class="form-control" id="passwordInput" [(ngModel)]="userContentItem.password"></td>
+      <td><button class="btn btn-success" id="add-websiteItem" (click)="addUserContent()">Add</button></td>
+    </tr>
+
+    <tr *ngFor="let item of userContentList; let i=index">
+    <td><input type="text" class="form-control inpWebsite" disabled="false" value="{{item.website}}" [(ngModel)]="userContentList[i].website" (blur)="finishEdit($event)"><span class="buttEdit" (click)="startEdit($event)"></span></td>
+    <td><input type="text" class="form-control inpLogin" disabled="false" value="{{item.login}}" [(ngModel)]="userContentList[i].login" (blur)="finishEdit($event)"><span class="buttEdit" (click)="startEdit($event)"></span></td>
+    <td><input type="password" class="form-control inpPass" disabled="false" value="{{item.password}}" [(ngModel)]="userContentList[i].password" (blur)="finishEdit($event)"><span class="buttEdit" (click)="startEdit($event)"></span></td>
+
+    <td>
+      <button id="buttShow" class="btn btn-info buttShowPassword" (click)="showPassword(i)">Show</button>
+      <button class="btn btn-warning buttDelete" (click)="deleteItem(i)">Delete</button>
+    </td>
+    </tr>
+
+    </thead>
+  </table>
+
+  </div>
+
+
+
+
+</div>
+
+

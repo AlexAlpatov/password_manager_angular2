@@ -1,0 +1,18 @@
+<div class="container signin">
+  <a href="javascript:;"  routerLink='/registration' >Create Account</a>
+
+  <div class='contact_form'>
+    <h2 class="form-signin-heading regHeader">Please sign in</h2>
+    <label for="inputName" class="sr-only"></label>
+    <input type="text" id="inputName" class="form-control" placeholder="Name" autofocus [(ngModel)]="userSignIn.login" autocomplete="off">
+    <label for="inputPassword" class="sr-only"></label>
+    <input type="password" id="inputPassword" class="form-control" placeholder="Password" [(ngModel)]="userSignIn.password" autocomplete="off">
+
+    <div class="checkbox">
+    </div>
+
+    <input id='buttSignin' class="btn btn-lg btn-primary btn-block" type='button' value="Sign in" (click)="enter()" >
+    <p *ngIf="markerError"  class="error">incorrect username or password</p>
+  </div>
+
+</div>
